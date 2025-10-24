@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp20251022.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="20"
+            HorizontalOptions="Fill">
+            <Label
+                Text="경기인력개발원 실습과제"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="130" />
+
+            <Label
+                Text="LS PLC XBM-DN32H"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2" />
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="2">
+                <Button Text="PLC 접속 연결" BackgroundColor="DimGray" x:Name="button1" Clicked="ConnectButton" Grid.Column="0"/>
+                <Button Text="접속 끊기" BackgroundColor="DimGray" x:Name="button2" Clicked="DisconnectButton" Grid.Column="1"/>
+            </Grid>
+            <ProgressBar x:Name="TimeoutProgress" Progress="0" HeightRequest="10" />
+            <Label x:Name="CountdownLabel" Text="PLC 접속 남은 시간 : 0 s" Style="{StaticResource SubHeadline}" HorizontalOptions="Center"/>
+
+            <!--Button Text="Analog Data Read Start / Stop" x:Name="button3" Clicked="Button3"/-->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="2">
+                <Button Text="녹색 램프" BackgroundColor="DarkGreen" x:Name="button4" Clicked="GreenLampButton" Grid.Column="0"/>
+                <Button Text="적색 램프" BackgroundColor="DarkRed" x:Name="button5" Clicked="RedLampButton" Grid.Column="1"/>
+            </Grid>
+            <Label Text="아날로그 입력값 : 모름"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                x:Name="Label1"/>
+
+            <Label Text="PLC 상태 : 모름"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                x:Name="Label2"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
